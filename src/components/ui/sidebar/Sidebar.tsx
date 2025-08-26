@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { useUIStore } from '@/store';
 import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from 'react-icons/io5'
 import { logout } from '@/actions';
-import { useEffect } from 'react';
 
 export const Sidebar = () => {
 
@@ -79,10 +78,9 @@ export const Sidebar = () => {
               <span className="ml-3 text-xl">Ordenes</span>
             </Link>
             <button
-              onClick={() => {
-                logout()
+              onClick={async() => {
+                await logout()
                 closeMenu()
-                window.location.replace('/')
               }}
               className="flex w-full items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
             >

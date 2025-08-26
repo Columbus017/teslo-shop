@@ -1,9 +1,8 @@
 'use server';
 
-import { signOut } from '@/auth'
-import { revalidatePath } from 'next/cache';
+import { signOut } from '@/auth';
 
 export const logout = async () => {
-    await signOut();
-    revalidatePath('/');
+    console.log('Logout entrando');
+    await signOut({ redirectTo: '/' });
 }

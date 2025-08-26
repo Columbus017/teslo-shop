@@ -10,11 +10,11 @@ class InvalidLoginError extends CredentialsSignin {
  
 export const { signIn, signOut, auth, handlers } = NextAuth({
   callbacks: {
-    authorized: async ({ auth }) => {
-      // Logged in users are authenticated, otherwise redirect to login page
-      console.log({ auth });
-      return !!auth
-    },
+    // authorized: async ({ auth }) => {
+    //   // Logged in users are authenticated, otherwise redirect to login page
+    //   console.log({ auth });
+    //   return !!auth
+    // },
     async jwt({ token, user }) {
       if ( user ) {
         token.data = user;
